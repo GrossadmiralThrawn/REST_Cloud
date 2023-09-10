@@ -21,5 +21,13 @@ data class AdminData(
     var adminEMail:            String,
     var adminUsername:         String,
     var adminPassword:         String,
-    var adminPhoneNumber:      Long,
-    var adminMobilePhone:      Long)
+    var adminPhoneNumber:      String,
+    var adminMobilePhone:      String)
+{
+    constructor(constructorAdminFirstName: String, constructorAdminLastName: String, constructorAdminDateOfBirth: Date,
+                constructorAdminEMail: String, constructorAdminUsername: String, constructorAdminPassword: String,
+                constructorAdminPhoneNumber: String, constructorAdminMobilePhone: String):
+            this (0, adminFirstName = constructorAdminFirstName, adminLastName = constructorAdminLastName, adminDateOfBirth = constructorAdminDateOfBirth, adminEMail = constructorAdminEMail,
+                adminUsername = constructorAdminUsername, adminPassword = constructorAdminPassword, adminPhoneNumber = constructorAdminPhoneNumber,
+                adminMobilePhone = constructorAdminMobilePhone)
+}
