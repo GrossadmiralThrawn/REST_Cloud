@@ -33,8 +33,8 @@ data class UserData(
         userFirstName    = firstName,
         userLastName     = lastName,
         userDateOfBirth  = dateOfBirth,
-        userName     = userName,
-        userPassword = userPassword,
+        userName         = userName,
+        userPassword     = userPassword,
         userEMail        = eMail
     )
 }

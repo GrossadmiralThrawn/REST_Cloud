@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping(path = ["lukasCloud/user_start"])
 class UserController (@Autowired private val userService: UserService) {
     @GetMapping (path = ["/show_User"])
-    fun show_User(): List<String> {
+    fun showUser(): List<String> {
         return listOf(listOf(userService.showUser()).toString())
     }
 
@@ -70,16 +70,16 @@ class UserController (@Autowired private val userService: UserService) {
 
 
     @DeleteMapping(path = ["/delete/{id}"])
-    fun delete_User(@NotNull @PathVariable("id") user_ID: Long) {
-        userService.delete_User(user_ID)
+    fun deleteUser(@NotNull @PathVariable("id") user_ID: Long) {
+        userService.deleteUser(user_ID)
     }
 
 
 
 
     @PutMapping(path = ["/update_username_or_mail/{user_ID}"])
-    fun update_User(@PathVariable("user_ID") user_ID: Long, @RequestParam(required = false) user_Name: String,
-                    @RequestParam(required = false) e_Mail: String) {
+    fun updateUser(@PathVariable("user_ID") user_ID: Long, @RequestParam(required = false) user_Name: String,
+                   @RequestParam(required = false) e_Mail: String) {
         userService.update_User(user_ID, user_Name, e_Mail)
     }
 
@@ -87,9 +87,9 @@ class UserController (@Autowired private val userService: UserService) {
 
 
     @PutMapping(path = ["/update_name_user/{user_ID}"])
-    fun update_Real_Names(@PathVariable("user_ID") user_ID: Long,
-                          @RequestParam(required = false) first_Name: String,
-                          @RequestParam(required = false) last_Name: String) {
+    fun updateRealNames(@PathVariable("user_ID") user_ID: Long,
+                        @RequestParam(required = false) first_Name: String,
+                        @RequestParam(required = false) last_Name: String) {
         userService.updateRealName(user_ID, first_Name, last_Name)
     }
 }

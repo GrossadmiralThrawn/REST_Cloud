@@ -39,7 +39,7 @@ class UserService(@Autowired private val userRepository: UserRepository) {
 
 
 
-    fun delete_User (@NotNull user_ID: Long) {
+    fun deleteUser (@NotNull user_ID: Long) {
         if (!userRepository.existsById(user_ID))
         {
             throw IllegalStateException("Leider existiert dieser Nutzer nicht oder er wurde schon gelöscht.")
